@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The InterAsian Legalities Consortium</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            DEFAULT: '#0F2A47',
+                            light: '#14304F',
+                            dark: '#0A1C30',
+                            50: '#F0F4F8'
+                        },
+                        forest: {
+                            DEFAULT: '#1E5B4A',
+                            light: '#2A6B55',
+                            dark: '#143E33'
+                        },
+                        gold: {
+                            DEFAULT: '#C5A059',
+                            light: '#D4B87C',
+                            dark: '#A3803C'
+                        },
+                        academic: {
+                            bg: '#F8F9FA',
+                            card: '#FFFFFF',
+                            text: '#2D3748',
+                            muted: '#64748B'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #F8F9FA;
+            color: #2D3748;
+        }
+        h1, h2, h3, h4, .font-serif-heading {
+            font-family: 'Merriweather', serif;
+        }
+        .bg-pattern {
+            background-color: #0F2A47;
+            background-image: radial-gradient(#2A6B55 0.75px, transparent 0.75px), radial-gradient(#2A6B55 0.75px, #0F2A47 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0,15px 15px;
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body class="bg-academic-bg text-academic-text antialiased selection:bg-gold selection:text-white">
+
+    <!-- Top Bar -->
+    <div class="bg-navy-dark text-slate-300 text-xs py-2 px-4 border-b border-navy-light/40">
+        <div class="max-w-7xl mx-mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 max-w-7xl mx-auto">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-forest-light"></span>
+                <span class="tracking-wide">Part of the <strong class="text-white">InterAsia Partnership</strong> | Launched April 2024</span>
+            </div>
+            <div class="flex items-center space-x-6">
+                <a href="mailto:interasianlegalities@gmail.com" class="hover:text-gold transition-colors flex items-center gap-1.5">
+                    <i data-lucide="mail" class="w-3.5 h-3.5"></i> interasianlegalities@gmail.com
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="hover:text-gold transition-colors flex items-center gap-1">
+                    <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener" class="hover:text-gold transition-colors flex items-center gap-1">
+                    <i data-lucide="instagram" class="w-3.5 h-3.5"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-navy/95 backdrop-blur-md text-white shadow-xl border-b border-forest/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand / Logo -->
+                <a href="#" class="flex items-center gap-3.5 group">
+                    <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-navy-light to-forest p-1 shadow-md border border-gold/30 flex items-center justify-center group-hover:scale-105 transition-transform">
+                        <!-- Banyan Tree Icon SVG -->
+                        <svg viewBox="0 0 100 100" class="w-full h-full text-white" fill="none" stroke="currentColor">
+                            <path d="M50 88V60M50 60C40 60 30 50 30 38C30 25 40 18 50 18C60 18 70 25 70 38C70 50 60 60 50 60Z" stroke-width="3" stroke-linecap="round"/>
+                            <path d="M50 60C50 60 38 65 25 60M50 60C50 60 62 65 75 60M50 72C42 72 32 78 20 85M50 72C58 72 68 78 80 85" stroke-width="2.5" stroke-linecap="round"/>
+                            <circle cx="50" cy="28" r="16" fill="#1E5B4A" fill-opacity="0.4" stroke="#C5A059" stroke-width="1.5"/>
+                            <circle cx="35" cy="38" r="12" fill="#1E5B4A" fill-opacity="0.4" stroke="#C5A059" stroke-width="1.5"/>
+                            <circle cx="65" cy="38" r="12" fill="#1E5B4A" fill-opacity="0.4" stroke="#C5A059" stroke-width="1.5"/>
+                            <path d="M28 45C28 65 22 75 18 88M72 45C72 65 78 75 82 88" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-lg font-serif tracking-tight font-bold text-white group-hover:text-gold transition-colors">
+                            The InterAsian Legalities
+                        </span>
+                        <span class="block text-xs uppercase tracking-widest text-forest-light font-medium -mt-1">
+                            Consortium
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <div class="hidden lg:flex items-center space-x-1">
+                    <a href="#about" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">About Us</a>
+                    <a href="#themes" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">Research Themes</a>
+                    <a href="#programs" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">Programs & Events</a>
+                    <a href="#researchers" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">Researchers</a>
+                    <a href="#partners" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">Partners</a>
+                    <a href="#publications" class="px-3 py-2 text-sm font-medium hover:text-gold transition-colors rounded-md">Publications</a>
+                    <a href="#contact" class="ml-4 px-4 py-2 text-sm font-medium bg-forest hover:bg-forest-light text-white rounded-md shadow-md border border-forest-light/50 transition-all hover:shadow-lg">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button type="button" id="mobile-menu-btn" class="lg:hidden p-2 rounded-md text-slate-300 hover:text-white hover:bg-navy-light focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark border-b border-forest/30 px-4 pt-2 pb-6 space-y-2">
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">About Us</a>
+            <a href="#themes" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">Research Themes</a>
+            <a href="#programs" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">Programs & Events</a>
+            <a href="#researchers" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">Researchers</a>
+            <a href="#partners" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">Partners</a>
+            <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-navy-light text-slate-200">Publications</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium bg-forest text-white">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-pattern text-white py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-transparent z-0"></div>
+        
+        <!-- Decorative Glow -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-96 h-96 bg-forest/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-0 right-10 w-80 h-80 bg-gold/10 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-forest/50 border border-gold/40 text-xs font-semibold uppercase tracking-wider text-gold mb-6 backdrop-blur-sm">
+                    <i data-lucide="globe" class="w-3.5 h-3.5"></i> Global Governance & Local Realities
+                </div>
+                <h1 class="text-4xl md:text-6xl font-serif font-bold tracking-tight text-white leading-tight mb-6">
+                    The InterAsian Legalities <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-light via-gold to-yellow-200">Consortium</span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed font-light mb-8">
+                    Investigating contemporary realities and historical foundations underpinning Asian legal systems and cultures through interdisciplinary collaboration across law, humanities, and social sciences.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#about" class="px-6 py-3.5 bg-forest hover:bg-forest-light text-white font-medium rounded-lg shadow-lg hover:shadow-forest/50 transition-all flex items-center gap-2 group">
+                        Explore Our Research <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#themes" class="px-6 py-3.5 bg-navy-light/80 hover:bg-navy-light text-white font-medium rounded-lg border border-slate-600/60 transition-all">
+                        Research Themes
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Narrative Column -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-block border-l-4 border-gold stroke-3 pl-3">
+                        <span class="text-xs font-bold uppercase tracking-widest text-forest font-sans">Scholarly Community</span>
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1">About the Consortium</h2>
+                    </div>
+
+                    <p class="text-lg text-slate-700 leading-relaxed font-serif italic">
+                        "Above all, we are a scholarly community rather than an institutional hub; your intellectual engagement is central to who we are and how we act."
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        Launched in April 2024, the <strong>InterAsian Legalities Consortium</strong> investigates contemporary realities and historical foundations underpinning Asian legal systems and cultures. It approaches Asia as a set of interconnected processes: as borders are being crossed more easily than ever before, abetted by technological advancements in digital infrastructure. Yet local legal regimes and actors continue to maintain pivotal socio-political and territorial identities.
+                    </p>
+
+                    <p class="text-slate-600 leading-relaxed">
+                        This research partnership aims to undertake research, and develop educational initiatives, that are simultaneously cognisant of deeply local, and grounded, legal and governance realities while being aware and able to interpret global governance systems.
+                    </p>
+
+                    <div class="bg-academic-bg p-5 rounded-xl border border-slate-200 mt-6">
+                        <h4 class="text-sm font-bold text-navy uppercase tracking-wider mb-2 flex items-center gap-2">
+                            <i data-lucide="layers" class="w-4 h-4 text-forest"></i> Interdisciplinary Synergy
+                        </h4>
+                        <p class="text-sm text-slate-600">
+                            Our network unites scholars from <strong>law, architecture, social sciences, humanities, and medicine</strong>. Through interdisciplinary collaborations, we foster research excellence and spearhead cooperative international grant applications.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Directors Column -->
+                <div class="lg:col-span-5">
+                    <div class="bg-navy rounded-2xl p-8 text-white shadow-xl relative overflow-hidden border border-navy-light">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-forest/40 rounded-full blur-2xl"></div>
+                        <h3 class="text-2xl font-serif font-bold text-gold mb-6 border-b border-navy-light pb-4 flex items-center gap-2">
+                            <i data-lucide="award" class="w-6 h-6 text-gold"></i> Founding Directors
+                        </h3>
+
+                        <div class="space-y-6 relative z-10">
+                            <!-- Director 1 -->
+                            <div class="flex items-start gap-4 p-3 rounded-lg bg-navy-light/50 border border-slate-700/50">
+                                <div class="w-14 h-14 rounded-full bg-forest-light/60 flex items-center justify-center font-serif font-bold text-lg text-gold border border-gold/30 shrink-0">
+                                    TL
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-white">Professor Tim Lindsey</h4>
+                                    <p class="text-xs text-gold uppercase tracking-wider font-semibold">Melbourne Law School</p>
+                                    <p class="text-xs text-slate-300 mt-1">Leading authority in Asian legal systems, Islamic law, and Indonesian jurisprudence.</p>
+                                </div>
+                            </div>
+
+                            <!-- Director 2 -->
+                            <div class="flex items-start gap-4 p-3 rounded-lg bg-navy-light/50 border border-slate-700/50">
+                                <div class="w-14 h-14 rounded-full bg-forest-light/60 flex items-center justify-center font-serif font-bold text-lg text-gold border border-gold/30 shrink-0">
+                                    JK
+                                </div>
+                                <div>
+                                    <h4 class="font-serif font-bold text-lg text-white">Associate Professor Jeremy Kingsley</h4>
+                                    <p class="text-xs text-gold uppercase tracking-wider font-semibold">WSU School of Law</p>
+                                    <p class="text-xs text-slate-300 mt-1">Specialist in legal anthropology, transnational governance, and Asian fabrics of governance.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-4 border-t border-navy-light/80 text-xs text-slate-400 text-center">
+                            Consortium connected under the broader <strong class="text-slate-200">InterAsia Partnership</strong> network.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Themes Section -->
+    <section id="themes" class="py-20 bg-academic-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Core Academic Pillars</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1 mb-4">Research Themes</h2>
+                <p class="text-slate-600">
+                    Our collaborative inquiry is structured into four pivotal thematic teams led by prominent researchers across regional corridors.
+                </p>
+            </div>
+
+            <!-- Theme Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Theme 1 -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-forest rounded-l-xl"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 rounded-lg bg-forest/10 text-forest group-hover:bg-forest group-hover:text-white transition-colors">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-600">Theme Lead</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-navy mb-1">1. Global Faith</h3>
+                        <p class="text-sm font-semibold text-gold mb-4">Led by Dr Maria Bhatti</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Investigating how religion shapes law, finance, and society across Asia and beyond. Examining Islamic, Hindu, Buddhist, and other faith traditions in interaction with state law and global markets.
+                        </p>
+                        <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-2">Focus Areas:</h4>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest shrink-0"></i> Religion, law, and legal pluralism</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest shrink-0"></i> Faith-based and ethical finance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest shrink-0"></i> Digital finance and religious norms</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest shrink-0"></i> Gender and economic inclusion</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest shrink-0"></i> Religious charity & development (waqf, zakat, dana)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Theme 2 -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-navy rounded-l-xl"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 rounded-lg bg-navy/10 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-600">Theme Lead</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-navy mb-1">2. Actors in Governance</h3>
+                        <p class="text-sm font-semibold text-gold mb-4">Led by Dr Rangika Palliyaarachchi</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Asking "Who really governs?" Beyond formal governments, studying courts, NGOs, corporations, community leaders, and international bodies sharing and competing for power in Asia.
+                        </p>
+                        <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-2">Focus Areas:</h4>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-navy shrink-0"></i> Corporate power and private governance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-navy shrink-0"></i> Customary law and Indigenous governance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-navy shrink-0"></i> Digital governance dynamics</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-navy shrink-0"></i> Mapping non-state regulatory orders</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Theme 3 -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gold rounded-l-xl"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 rounded-lg bg-gold/10 text-gold-dark group-hover:bg-gold group-hover:text-white transition-colors">
+                                <i data-lucide="landmark" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-600">Theme Lead</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-navy mb-1">3. Constitutional Connections</h3>
+                        <p class="text-sm font-semibold text-gold mb-4">Led by Dr Rehan Abeyratne</p>
+                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">
+                            Asian constitutions are inextricably linked by shared colonial histories and global doctrines. We examine how these cross-border connections shape constitutional law in practice, not just on paper.
+                        </p>
+                        <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-2">Focus Areas:</h4>
+                        <ul class="space-y-2 text-xs text-slate-600">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-dark shrink-0"></i> How global legal norms travel and adapt</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-dark shrink-0"></i> InterAsian constitutional histories</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-gold-dark shrink-0"></i> Legal pluralism and structural challenges</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Theme 4 -->
+                <div class="bg-white rounded-xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-forest-light rounded-l-xl"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="p-3 rounded-lg bg-forest-light/10 text-forest-light group-hover:bg-forest-light group-hover:text-white transition-colors">
+                                <i data-lucide="git-fork" class="w-6 h-6"></i>
+                            </span>
+                            <span class="text-xs font-semibold px-2.5 py-1 rounded bg-slate-100 text-slate-600">Theme Lead</span>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold text-navy mb-1">4. Asian Fabrics of Governance</h3>
+                        <p class="text-sm font-semibold text-gold mb-4">Led by Dr Jeremy Kingsley</p>
+                        <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                            Approaching Asia as a web of connected legal systems linked by trade routes, infrastructure, and the movement of people, money, and ideas across two key corridors:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4 text-xs">
+                            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+                                <strong class="text-navy block mb-1">Maritime Corridor:</strong>
+                                Indian & Pacific Oceans (Dubai, Singapore, Jakarta, Hong Kong, Tokyo)
+                            </div>
+                            <div class="bg-slate-50 p-2.5 rounded border border-slate-200">
+                                <strong class="text-navy block mb-1">Inland Corridor:</strong>
+                                Eurasian Land Bridge (Beirut, Astana, Islamabad, Beijing)
+                            </div>
+                        </div>
+
+                        <h4 class="text-xs font-bold text-navy uppercase tracking-wider mb-2">Core Projects:</h4>
+                        <ul class="space-y-1.5 text-xs text-slate-600">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest-light shrink-0"></i> Mapping connections & geopolitical frameworks</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest-light shrink-0"></i> Infrastructures (social, technological, physical)</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-forest-light shrink-0"></i> Disruptions to the global legal order</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs & Events Section -->
+    <section id="programs" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-forest">Academic Gatherings</span>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1">Programs & Events</h2>
+                </div>
+                <p class="text-slate-500 text-sm mt-2 md:mt-0 max-w-md">
+                    Workshops, symposiums, and ongoing seminar series fostering collaborative inquiry across Asia and Australia.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                
+                <!-- Event 1: Surabaya Workshop -->
+                <div class="bg-academic-bg rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 relative bg-navy flex items-center justify-center p-8 min-h-[220px]">
+                        <!-- Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent z-10"></div>
+                        <div class="relative z-20 text-center p-6 border border-gold/30 rounded-xl bg-navy-dark/80 backdrop-blur-sm w-full max-w-sm">
+                            <i data-lucide="image" class="w-8 h-8 text-gold mx-auto mb-2 opacity-80"></i>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gold block">Photo Placeholder</span>
+                            <span class="text-sm text-slate-300 font-serif">Surabaya Workshop 2026</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-forest mb-3">
+                                <span class="bg-forest/10 px-3 py-1 rounded-full border border-forest/20">International Workshop</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 22–23 April 2026</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> Surabaya, Indonesia</span>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-navy mb-3">
+                                Surabaya Workshop: Background Papers
+                            </h3>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Structured around four pivotal research themes designed to guide our collective inquiry. The primary objective is to inspire active contribution to these themes, ensuring robust preparation for an upcoming <strong>Australian Research Council (ARC) Centre of Excellence</strong> application.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Key Outcome: ARC Centre of Excellence Prep</span>
+                            <span class="text-forest font-semibold">Active Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2: Seminar Series Item 1 -->
+                <div class="bg-academic-bg rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 relative bg-forest-dark flex items-center justify-center p-8 min-h-[220px]">
+                        <!-- Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-forest-dark via-forest-dark/60 to-transparent z-10"></div>
+                        <div class="relative z-20 text-center p-6 border border-gold/30 rounded-xl bg-forest-dark/80 backdrop-blur-sm w-full max-w-sm">
+                            <i data-lucide="presentation" class="w-8 h-8 text-gold mx-auto mb-2 opacity-80"></i>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gold block">Photo Placeholder</span>
+                            <span class="text-sm text-slate-300 font-serif">Seminar 1 - Batik & Education</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-navy mb-3">
+                                <span class="bg-navy/10 px-3 py-1 rounded-full border border-navy/20">Consortium Seminar Series</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 30 September 2026</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> WSU Parramatta South Campus, Sydney</span>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-navy mb-2">
+                                Beyond Wearing Batik: Educating Asia into the World
+                            </h3>
+                            <div class="text-xs text-slate-600 mb-4 font-medium">
+                                <span>Presented by: <strong>Assoc. Prof. Jeremy Kingsley</strong></span> | 
+                                <span class="ml-1">Chaired by: <strong>Dr Rangika Palliyaarachchi</strong></span>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Explores Australia's engagement with Asia, looking beyond symbolic gestures to examine the fundamental importance of education, research, and developing meaningful regional expertise.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Venue: Parramatta South Campus</span>
+                            <span class="text-gold-dark font-semibold">Seminar Series</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3: Seminar Series Item 2 -->
+                <div class="bg-academic-bg rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all grid grid-cols-1 lg:grid-cols-12">
+                    <div class="lg:col-span-5 relative bg-navy-light flex items-center justify-center p-8 min-h-[220px]">
+                        <!-- Image Placeholder -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-navy-light via-navy-light/60 to-transparent z-10"></div>
+                        <div class="relative z-20 text-center p-6 border border-gold/30 rounded-xl bg-navy/80 backdrop-blur-sm w-full max-w-sm">
+                            <i data-lucide="scale" class="w-8 h-8 text-gold mx-auto mb-2 opacity-80"></i>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-gold block">Photo Placeholder</span>
+                            <span class="text-sm text-slate-300 font-serif">Seminar 2 - Basic Structure</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7 p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="flex flex-wrap items-center gap-3 text-xs font-semibold text-navy mb-3">
+                                <span class="bg-navy/10 px-3 py-1 rounded-full border border-navy/20">Consortium Seminar Series</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="calendar" class="w-3.5 h-3.5"></i> 21 October 2026</span>
+                                <span class="flex items-center gap-1 text-slate-500"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i> WSU Parramatta South Campus, Sydney</span>
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold text-navy mb-2">
+                                Basic Structure: Uncovering the InterAsian Colonial Roots of a Global Doctrine
+                            </h3>
+                            <div class="text-xs text-slate-600 mb-4 font-medium">
+                                <span>Presented by: <strong>Prof. Rehan Abeyratne</strong></span> | 
+                                <span class="ml-1">Chaired by: <strong>Dr Meda Couzens</strong></span>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Re-evaluates the basic structure doctrine—which allows courts to strike down constitutional amendments threatening core principles like judicial independence. Challenging the traditional 1973 Indian Supreme Court origin narrative, this talk explores older Privy Council roots across former British Empire jurisdictions.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-slate-200/80 flex items-center justify-between text-xs text-slate-500">
+                            <span>Key Concept: Judicial Independence & Empire Roots</span>
+                            <span class="text-gold-dark font-semibold">Seminar Series</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Researchers Section -->
+    <section id="researchers" class="py-20 bg-academic-bg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Scholarly Directory</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1 mb-3">Consortium Researchers</h2>
+                <p class="text-slate-600 text-sm">
+                    Our interdisciplinary network brings together leading academics across prominent global and Asian institutions.
+                </p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-2 mb-12">
+                <button onclick="filterResearchers('all')" class="filter-btn active px-4 py-2 text-xs font-medium rounded-full bg-navy text-white shadow-sm transition-all">All Scholars</button>
+                <button onclick="filterResearchers('wsu')" class="filter-btn px-4 py-2 text-xs font-medium rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">Western Sydney University</button>
+                <button onclick="filterResearchers('indonesia')" class="filter-btn px-4 py-2 text-xs font-medium rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">Indonesian Institutions</button>
+                <button onclick="filterResearchers('international')" class="filter-btn px-4 py-2 text-xs font-medium rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all">International Institutions</button>
+            </div>
+
+            <!-- Researchers Grid -->
+            <div id="researchers-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                
+                <!-- Researcher 1 -->
+                <div class="researcher-card wsu bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-forest/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Jeremy J. Kingsley</h4>
+                    <p class="text-xs text-forest font-semibold mt-1">Western Sydney University</p>
+                    <p class="text-xs text-slate-500 mt-2">Asian Fabrics of Governance; Legal Anthropology</p>
+                </div>
+
+                <!-- Researcher 2 -->
+                <div class="researcher-card wsu bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-forest/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Rangika Palliyaarachchi</h4>
+                    <p class="text-xs text-forest font-semibold mt-1">Western Sydney University</p>
+                    <p class="text-xs text-slate-500 mt-2">Actors in Governance; Corporate & Private Power</p>
+                </div>
+
+                <!-- Researcher 3 -->
+                <div class="researcher-card wsu bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-forest/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Rehan Abeyratne</h4>
+                    <p class="text-xs text-forest font-semibold mt-1">Western Sydney University</p>
+                    <p class="text-xs text-slate-500 mt-2">Constitutional Connections; Comparative Public Law</p>
+                </div>
+
+                <!-- Researcher 4 -->
+                <div class="researcher-card wsu bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-forest/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Maria Bhatti</h4>
+                    <p class="text-xs text-forest font-semibold mt-1">Western Sydney University</p>
+                    <p class="text-xs text-slate-500 mt-2">Global Faith; Religion & Ethical Finance</p>
+                </div>
+
+                <!-- Researcher 5 -->
+                <div class="researcher-card wsu bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-forest/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Meda Couzens</h4>
+                    <p class="text-xs text-forest font-semibold mt-1">Western Sydney University</p>
+                    <p class="text-xs text-slate-500 mt-2">Children's Rights; Public International Law</p>
+                </div>
+
+                <!-- Researcher 6 -->
+                <div class="researcher-card international bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-gold/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Maitrii Victoriano Aung Thwin</h4>
+                    <p class="text-xs text-gold-dark font-semibold mt-1">National University of Singapore</p>
+                    <p class="text-xs text-slate-500 mt-2">Southeast Asian History; Legal Histories</p>
+                </div>
+
+                <!-- Researcher 7 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Ibrahim Hanif</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Gadjah Mada</p>
+                    <p class="text-xs text-slate-500 mt-2">Indonesian Legal Systems & Governance</p>
+                </div>
+
+                <!-- Researcher 8 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Iman Prihandono</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Airlangga</p>
+                    <p class="text-xs text-slate-500 mt-2">Business & Human Rights; International Law</p>
+                </div>
+
+                <!-- Researcher 9 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Iim Halimatusa'diyah</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">UIN Syarif Hidayatullah</p>
+                    <p class="text-xs text-slate-500 mt-2">Sociology of Religion & Gender Studies</p>
+                </div>
+
+                <!-- Researcher 10 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Windy Triana</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">UIN Syarif Hidayatullah</p>
+                    <p class="text-xs text-slate-500 mt-2">Islamic Law & Modern Institutions</p>
+                </div>
+
+                <!-- Researcher 11 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Haula Noor</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">UIN Syarif Hidayatullah</p>
+                    <p class="text-xs text-slate-500 mt-2">Family & Religious Governance</p>
+                </div>
+
+                <!-- Researcher 12 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Narila Mutia</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">UIN Syarif Hidayatullah</p>
+                    <p class="text-xs text-slate-500 mt-2">Socio-Legal Studies & Communities</p>
+                </div>
+
+                <!-- Researcher 13 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Amira Paripurna</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Airlangga</p>
+                    <p class="text-xs text-slate-500 mt-2">Criminal Law & Human Rights</p>
+                </div>
+
+                <!-- Researcher 14 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Rosa Ristawati</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Airlangga</p>
+                    <p class="text-xs text-slate-500 mt-2">Constitutional Law & Governance</p>
+                </div>
+
+                <!-- Researcher 15 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Taufik Rachman</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Airlangga</p>
+                    <p class="text-xs text-slate-500 mt-2">Legal Pluralism & Local Orders</p>
+                </div>
+
+                <!-- Researcher 16 -->
+                <div class="researcher-card indonesia bg-white rounded-xl p-5 border border-slate-200 text-center shadow-sm hover:shadow-md transition-all">
+                    <div class="w-20 h-20 mx-auto rounded-full bg-slate-100 border-2 border-navy/30 flex items-center justify-center mb-4 text-slate-400">
+                        <i data-lucide="user" class="w-10 h-10"></i>
+                    </div>
+                    <h4 class="font-serif font-bold text-navy text-base">Nabilla Desyalika Putri</h4>
+                    <p class="text-xs text-navy font-semibold mt-1">Universitas Negeri Surabaya</p>
+                    <p class="text-xs text-slate-500 mt-2">Legal Systems & Institutional Research</p>
+                </div>
+
+            </div>
+
+            <!-- Distinct Coordinator Section -->
+            <div class="mt-16 pt-8 border-t border-slate-300">
+                <div class="max-w-xl mx-auto bg-gradient-to-r from-navy via-navy-light to-navy p-6 rounded-2xl text-white shadow-lg border border-gold/30 text-center">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold text-xs font-semibold uppercase tracking-wider mb-3">
+                        <i data-lucide="globe-2" class="w-3.5 h-3.5"></i> International Coordination
+                    </div>
+                    <h3 class="font-serif font-bold text-xl text-white">Mastin Annisa Nur Fauziah</h3>
+                    <p class="text-gold font-medium text-sm mt-1">International Research Coordinator</p>
+                    <p class="text-xs text-slate-300 mt-2">
+                        Overseeing consortium operational logistics, inter-institutional partner liaisons, and international collaborative activities.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Institutional Network</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1 mb-4">Consortium Partners</h2>
+                <p class="text-slate-600 text-sm">
+                    Collaborating with premier law faculties, research institutes, and universities globally.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                
+                <!-- Global Partners Card -->
+                <div class="bg-academic-bg p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-serif font-bold text-navy mb-6 flex items-center gap-2 border-b border-slate-200 pb-3">
+                        <i data-lucide="globe" class="w-5 h-5 text-forest"></i> Global Academic Partners
+                        <span class="text-xs font-sans font-normal text-slate-500 ml-auto">As of 2026</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">The Centre for Asian and Pacific Law</strong>
+                                <span class="text-xs text-slate-500">Sydney Law School</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">The Asian Law Centre</strong>
+                                <span class="text-xs text-slate-500">Melbourne Law School</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">LSE Law School</strong>
+                                <span class="text-xs text-slate-400 font-italic">(To be confirmed)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">Institute for the Interregional Study of Constitutionalism</strong>
+                                <span class="text-xs text-slate-500">Charles University – Prague</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">The University of Toronto</strong>
+                                <span class="text-xs text-slate-500">Faculty of Law & InterAsian Studies</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-forest/10 rounded text-forest mt-0.5"><i data-lucide="building-2" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">The Asia Research Institute (ARI)</strong>
+                                <span class="text-xs text-slate-500">National University of Singapore</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Indonesian Partners Card -->
+                <div class="bg-academic-bg p-8 rounded-2xl border border-slate-200">
+                    <h3 class="text-xl font-serif font-bold text-navy mb-6 flex items-center gap-2 border-b border-slate-200 pb-3">
+                        <i data-lucide="map-pin" class="w-5 h-5 text-gold-dark"></i> Indonesian University Partners
+                        <span class="text-xs font-sans font-normal text-slate-500 ml-auto">Regional Core</span>
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-gold/10 rounded text-gold-dark mt-0.5"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">Universitas Airlangga</strong>
+                                <span class="text-xs text-slate-500">Fakultas Hukum (Faculty of Law)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-gold/10 rounded text-gold-dark mt-0.5"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">Universitas Gadjah Mada</strong>
+                                <span class="text-xs text-slate-500">Fakultas Hukum (Faculty of Law)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-gold/10 rounded text-gold-dark mt-0.5"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">Pusat Pengkajian Islam dan Masyarakat (PPIM)</strong>
+                                <span class="text-xs text-slate-500">UIN Syarif Hidayatullah Jakarta</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="p-1.5 bg-gold/10 rounded text-gold-dark mt-0.5"><i data-lucide="graduation-cap" class="w-4 h-4"></i></span>
+                            <div>
+                                <strong class="text-slate-800 text-sm block">Universitas Islam Internasional Indonesia (UIII)</strong>
+                                <span class="text-xs text-slate-500">International Graduate School</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="py-20 bg-academic-bg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-forest">Academic Output</span>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-navy mt-1 mb-3">Publications</h2>
+                <p class="text-slate-600 text-sm">
+                    Monographs, edited volumes, and peer-reviewed journal articles produced by consortium researchers.
+                </p>
+            </div>
+
+            <!-- Tab Headers -->
+            <div class="flex justify-center border-b border-slate-300 max-w-md mx-auto mb-8">
+                <button class="px-6 py-3 border-b-2 border-forest font-serif font-bold text-navy text-sm">Journal Articles</button>
+                <button class="px-6 py-3 border-b-2 border-transparent font-serif font-medium text-slate-400 text-sm hover:text-slate-600">Books & Monographs</button>
+            </div>
+
+            <!-- Empty State Display -->
+            <div class="max-w-2xl mx-auto bg-white p-12 rounded-2xl border border-dashed border-slate-300 text-center shadow-sm">
+                <div class="w-16 h-16 bg-forest/10 rounded-full flex items-center justify-center mx-auto text-forest mb-4">
+                    <i data-lucide="book-marked" class="w-8 h-8"></i>
+                </div>
+                <h3 class="font-serif font-bold text-xl text-navy mb-2">Publications Coming Soon</h3>
+                <p class="text-slate-500 text-sm leading-relaxed max-w-md mx-auto">
+                    Check back for upcoming research monographs, peer-reviewed journal papers, and collaborative thematic publications currently under development.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact Us Section -->
+    <footer id="contact" class="bg-navy text-white pt-16 pb-12 border-t-4 border-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-navy-light">
+                
+                <!-- Brand Info -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-forest p-1 border border-gold/40 flex items-center justify-center">
+                            <svg viewBox="0 0 100 100" class="w-full h-full text-white" fill="none" stroke="currentColor">
+                                <path d="M50 88V60M50 60C40 60 30 50 30 38C30 25 40 18 50 18C60 18 70 25 70 38C70 50 60 60 50 60Z" stroke-width="3"/>
+                                <circle cx="50" cy="28" r="16" fill="#1E5B4A"/>
+                            </svg>
+                        </div>
+                        <span class="font-serif font-bold text-xl text-white">The InterAsian Legalities Consortium</span>
+                    </div>
+                    <p class="text-slate-300 text-xs leading-relaxed font-light pr-6">
+                        An interdisciplinary research partnership investigating legalities, governance systems, and historical legal traditions across Asia. Part of the broader InterAsia Partnership.
+                    </p>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-serif font-bold text-gold text-sm tracking-wider uppercase">Navigation</h4>
+                    <ul class="space-y-2 text-xs text-slate-300">
+                        <li><a href="#about" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="#themes" class="hover:text-gold transition-colors">Research Themes</a></li>
+                        <li><a href="#programs" class="hover:text-gold transition-colors">Programs & Events</a></li>
+                        <li><a href="#researchers" class="hover:text-gold transition-colors">Researchers</a></li>
+                        <li><a href="#partners" class="hover:text-gold transition-colors">Partners</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info & Socials -->
+                <div class="md:col-span-4 space-y-4">
+                    <h4 class="font-serif font-bold text-gold text-sm tracking-wider uppercase">Get in Touch</h4>
+                    
+                    <a href="mailto:interasianlegalities@gmail.com" class="inline-flex items-center gap-2.5 text-xs text-slate-200 hover:text-gold transition-colors bg-navy-light/60 px-4 py-2.5 rounded-lg border border-slate-700 w-full">
+                        <i data-lucide="mail" class="w-4 h-4 text-gold"></i> interasianlegalities@gmail.com
+                    </a>
+
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-forest transition-colors border border-slate-700">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="w-9 h-9 rounded-full bg-navy-light flex items-center justify-center text-slate-300 hover:text-white hover:bg-forest transition-colors border border-slate-700">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 gap-4">
+                <p>&copy; 2026 The InterAsian Legalities Consortium. All rights reserved.</p>
+                <p>Designed for Academic & Research Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons Initialization & Interactivity Scripts -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Filtering logic for researchers
+        function filterResearchers(category) {
+            const cards = document.querySelectorAll('.researcher-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-navy', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-600');
+            });
+
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            event.target.classList.add('bg-navy', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
