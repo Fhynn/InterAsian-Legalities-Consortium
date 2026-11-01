@@ -21,7 +21,7 @@ export function ResearcherDirectory() {
       <div className="researcher-grid" aria-live="polite">
         {visible.map((person, index) => (
           <article key={person.name} className="researcher-card">
-            <div className="researcher-monogram" aria-hidden="true">{person.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>
+            {person.image ? <img className="researcher-photo" src={person.image} alt={t(`${person.name} portrait`, `Potret ${person.name}`)} /> : <div className="researcher-monogram" aria-hidden="true">{person.name.split(" ").map((part) => part[0]).slice(0, 2).join("")}</div>}
             <span>{String(index + 1).padStart(2, "0")}</span>
             <h2>{person.name}</h2>
             <p>{person.institution}</p>

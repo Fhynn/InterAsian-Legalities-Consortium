@@ -10,16 +10,17 @@ type SubtitleLanguageContextValue = {
 };
 
 const SubtitleLanguageContext = createContext<SubtitleLanguageContextValue | null>(null);
+const LANGUAGE_STORAGE_KEY = "site-language-v2";
 
 const languageListeners = new Set<() => void>();
 
 function readLanguage(): SubtitleLanguage {
-  const savedLanguage = window.localStorage.getItem("site-language") ?? window.localStorage.getItem("subtitle-language");
-  return savedLanguage === "en" ? "en" : "id";
+  const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+  return savedLanguage === "id" ? "id" : "en";
 }
 
 function readServerLanguage(): SubtitleLanguage {
-  return "id";
+  return "en";
 }
 
 function subscribeToLanguage(listener: () => void) {
@@ -34,7 +35,8 @@ function subscribeToLanguage(listener: () => void) {
 export function SubtitleLanguageProvider({ children }: { children: React.ReactNode }) {
   const language = useSyncExternalStore(subscribeToLanguage, readLanguage, readServerLanguage);
   const setLanguage = useCallback((nextLanguage: SubtitleLanguage) => {
-    window.localStorage.setItem("site-language", nextLanguage);
+    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    window.localStorage.removeItem("site-language");
     window.localStorage.removeItem("subtitle-language");
     languageListeners.forEach((listener) => listener());
   }, []);

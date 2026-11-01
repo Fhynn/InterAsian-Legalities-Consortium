@@ -17,6 +17,7 @@ export default function ProgramsPage() {
             <div className="program-number">0{index + 1}</div>
             <div className="program-meta"><span>{t(program.type, program.typeId)}</span><time>{t(program.date, program.dateId)}</time><span>{t(program.place, program.placeId)}</span></div>
             <div className="program-body">
+              <img className="program-image" src={program.image} alt={t(`${program.title} documentation`, `Dokumentasi ${program.titleId}`)} />
               <h2>{t(program.title, program.titleId)}</h2>
               {program.presenter && <p className="speaker-line">{t("Presented by", "Dipresentasikan oleh")}: <strong>{program.presenter}</strong> &nbsp;|&nbsp; {t("Chaired by", "Dipimpin oleh")}: <strong>{program.chair}</strong></p>}
               <p>{t(program.description, program.descriptionId)}</p>

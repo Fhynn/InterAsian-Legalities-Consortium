@@ -185,6 +185,7 @@ body.menu-open { overflow: hidden; }
 .program-meta { display: flex; flex-direction: column; gap: 10px; font-size: 12px; }
 .program-meta time { font-size: 18px; margin: 12px 0; }
 .program-body h2 { font-size: clamp(30px, 3vw, 46px); letter-spacing: -.045em; line-height: 1; margin: 0 0 18px; }
+.program-image { width: 100%; aspect-ratio: 2.05 / 1; object-fit: cover; object-position: center; margin: 0 0 24px; filter: saturate(.86) contrast(1.03); }
 .program-body p { color: var(--grey); margin: 0; }
 .program-body .speaker-line { margin-bottom: 16px; color: var(--black); font-size: 12px; }
 .program-body > small { display: block; margin-top: 24px; padding-top: 13px; border-top: 1px solid var(--soft-line); color: var(--red); font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
@@ -204,8 +205,11 @@ body.menu-open { overflow: hidden; }
 .researcher-card { min-height: 300px; padding: 25px; border-right: 1px solid var(--soft-line); border-bottom: 1px solid var(--soft-line); display: flex; flex-direction: column; transition: background .2s, color .2s; }
 .researcher-card:hover { background: #edf4f3; }
 .researcher-card:nth-child(4n+1) { border-left: 1px solid var(--soft-line); }
-.researcher-monogram { width: 78px; height: 78px; border-radius: 50%; border: 1px solid var(--black); display: grid; place-items: center; font-size: 24px; margin-bottom: auto; transition: background .2s, color .2s, border-color .2s; }
+.researcher-monogram, .researcher-photo { width: 78px; height: 78px; border-radius: 50%; border: 1px solid var(--black); margin-bottom: auto; }
+.researcher-monogram { display: grid; place-items: center; font-size: 24px; transition: background .2s, color .2s, border-color .2s; }
+.researcher-photo { display: block; object-fit: cover; object-position: center 28%; filter: grayscale(1); transition: filter .25s, transform .25s; }
 .researcher-card:hover .researcher-monogram { background: var(--red); border-color: var(--red); color: #fff; }
+.researcher-card:hover .researcher-photo { filter: grayscale(0); transform: scale(1.04); }
 .researcher-card > span { color: var(--red); font-size: 10px; margin-top: 25px; }
 .researcher-card h2 { font-size: 22px; letter-spacing: -.035em; margin: 7px 0; }
 .researcher-card p { color: var(--red); font-size: 10px; text-transform: uppercase; margin: 0 0 12px; }

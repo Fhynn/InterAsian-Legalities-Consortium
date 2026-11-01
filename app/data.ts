@@ -114,6 +114,7 @@ export const themes = [
 
 export const programs = [
   {
+    image: "/images/drive/program-surabaya-1.jpg",
     date: "22–23 April 2026",
     dateId: "22–23 April 2026",
     place: "Surabaya, Indonesia",
@@ -130,6 +131,7 @@ export const programs = [
     statusId: "Proyek Aktif",
   },
   {
+    image: "/images/drive/program-batik-session.jpg",
     date: "30 September 2026",
     dateId: "30 September 2026",
     place: "WSU Parramatta South Campus, Sydney",
@@ -148,6 +150,7 @@ export const programs = [
     statusId: "Seri Seminar",
   },
   {
+    image: "/images/drive/program-rehan.jpg",
     date: "21 October 2026",
     dateId: "21 Oktober 2026",
     place: "WSU Parramatta South Campus, Sydney",
@@ -173,12 +176,13 @@ export type Researcher = {
   field: string;
   fieldId: string;
   region: "Australia" | "International" | "Indonesia";
+  image?: string;
 };
 
 export const researchers: Researcher[] = [
   { name: "Jeremy J. Kingsley", institution: "Western Sydney University", field: "Asian Fabrics of Governance; Legal Anthropology", fieldId: "Jejaring Tata Kelola Asia; Antropologi Hukum", region: "Australia" },
   { name: "Rangika Palliyaarachchi", institution: "Western Sydney University", field: "Actors in Governance; Corporate & Private Power", fieldId: "Aktor dalam Tata Kelola; Kekuasaan Korporasi & Privat", region: "Australia" },
-  { name: "Rehan Abeyratne", institution: "Western Sydney University", field: "Constitutional Connections; Comparative Public Law", fieldId: "Keterhubungan Konstitusional; Perbandingan Hukum Publik", region: "Australia" },
+  { name: "Rehan Abeyratne", institution: "Western Sydney University", field: "Constitutional Connections; Comparative Public Law", fieldId: "Keterhubungan Konstitusional; Perbandingan Hukum Publik", region: "Australia", image: "/images/drive/researcher-rehan.jpg" },
   { name: "Maria Bhatti", institution: "Western Sydney University", field: "Global Faith; Religion & Ethical Finance", fieldId: "Agama Global; Agama & Keuangan Etis", region: "Australia" },
   { name: "Meda Couzens", institution: "Western Sydney University", field: "Children’s Rights; Public International Law", fieldId: "Hak Anak; Hukum Internasional Publik", region: "Australia" },
   { name: "Maitrii Victoriano Aung Thwin", institution: "National University of Singapore", field: "Southeast Asian History; Legal Histories", fieldId: "Sejarah Asia Tenggara; Sejarah Hukum", region: "International" },

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id">
+    <html lang="en">
       <body>
         <SubtitleLanguageProvider>
           <a className="skip-link" href="#main"><Localized en="Skip to content" id="Lewati ke konten" /></a>
